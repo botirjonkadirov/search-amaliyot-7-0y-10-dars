@@ -5,6 +5,8 @@ import Home from './components/Home'
 import About from './components/About'
 import Contact from './components/Contact'
 import Single from './components/Single'
+import Likedphotos from './components/Likedphotos'
+import Login from './components/Login'
 function App() {
   const routes = createBrowserRouter([{
     path: '/',
@@ -25,6 +27,14 @@ function App() {
       {
         path: `single/:id`,
         element: <Single/>
+      },
+      {
+        path: 'login',
+        element: <Login/>
+      },
+      {
+        path: 'likedphotos',
+        element: <Likedphotos/>
       }
     ]
   }])

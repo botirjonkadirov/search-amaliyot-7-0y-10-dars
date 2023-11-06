@@ -3,8 +3,10 @@ import { useFetch } from "../../hooks/UseFetch";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
+import { addlikePhotos } from "../redux/features/unsplashSlice";
+import { useDispatch } from "react-redux";
 function Home() {
-
+    const dispatch = useDispatch()
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerpage]= useState(5)
   const [data, setData] = useState(null);
@@ -60,6 +62,7 @@ function Home() {
                   className="w-[400px] h-[400px] object-cover"
                 />
                </Link>
+               <button onClick={()=>dispatch(addlikePhotos(d))} className="btn btn-sm btn-primary mt-3">Like</button>
               </li>
             );
           })}

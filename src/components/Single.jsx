@@ -5,6 +5,7 @@ import Pagination from './Pagination'
 
 function Single() {
     const {id}= useParams()
+    console.log(id)
     const url = `https://api.unsplash.com/photos/${id}?client_id=mnED95ShF_EQtiCaBZJ_VImwe9412iSeQcYIn6L0_x0`
     const {data} = useFetch(url)
     console.log(data)
